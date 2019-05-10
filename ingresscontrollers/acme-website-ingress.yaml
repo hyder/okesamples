@@ -1,12 +1,12 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: hello-ingress
+  name: acme-website-ingress
 spec:
   rules:
   - host: www.example.org
     http:
       paths:
       - backend:
-          serviceName: acme-website
+          serviceName: hello-cluster-service
           servicePort: 80
