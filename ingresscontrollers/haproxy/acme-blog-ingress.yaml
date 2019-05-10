@@ -9,5 +9,5 @@ spec:
       paths:
       - path: /blog
         backend:
-          serviceName: http-svc
+          serviceName: acme-blog
           servicePort: 80
