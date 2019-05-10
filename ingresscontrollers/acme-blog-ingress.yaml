@@ -1,12 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: acme-blog-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: rewrite
+  namespace: default
 spec:
   rules:
-  - host: www.example.org/blog
+  - host: www.example.org
     http:
       paths:
       - backend:
           serviceName: acme-blog
           servicePort: 80
+        path: /blog(/|$)(.*)
