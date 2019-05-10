@@ -8,5 +8,5 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: acme-website
+          serviceName: hello-cluster-service
           servicePort: 80
