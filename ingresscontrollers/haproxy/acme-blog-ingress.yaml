@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: acme-blog
+spec:
+  rules:
+  - host: wwww.example.org
+    http:
+      paths:
+      - path: /blog
+        backend:
+          serviceName: http-svc
+          servicePort: 80
