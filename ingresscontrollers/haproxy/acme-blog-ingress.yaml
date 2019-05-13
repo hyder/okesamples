@@ -4,10 +4,10 @@ metadata:
   name: acme-blog
 spec:
   rules:
-  - host: wwww.example.org
+  - host: blog.example.org
     http:
       paths:
-      - path: /blog
+      - path: /
         backend:
           serviceName: acme-blog
           servicePort: 80
