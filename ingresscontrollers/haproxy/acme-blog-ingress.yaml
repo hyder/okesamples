@@ -3,14 +3,13 @@ kind: Ingress
 metadata:
   name: acme-blog
   annotations:
-    kubernetes.io/ingress.class: "haproxy"
-    haproxy.ingress.kubernetes.io/app-root: /$2    
+    ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: www.example.org
     http:
       paths:
-      - path: /blog(/|$)(.*)
+      - path: /blog
         backend:
           serviceName: acme-blog
           servicePort: 80

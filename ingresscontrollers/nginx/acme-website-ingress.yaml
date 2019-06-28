@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: acme-website-ingress
+  name: acme-website
 spec:
   rules:
   - host: www.example.org

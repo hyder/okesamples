@@ -1,0 +1,15 @@
+apiVersion: contour.heptio.com/v1beta1
+kind: IngressRoute
+metadata:
+  name: acme-blog-ingress
+  labels:
+    app: acme-blog
+spec:
+  virtualhost:
+    fqdn: www.example.org
+  routes:
+    - match: /blog
+      prefixRewrite: "/"
+      services:
+        - name: acme-blog
+          port: 80
