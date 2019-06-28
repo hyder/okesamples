@@ -2,12 +2,15 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: acme-blog
+  annotations:
+    kubernetes.io/ingress.class: "haproxy"
+    haproxy.ingress.kubernetes.io/app-root: /$2    
 spec:
   rules:
-  - host: blog.example.org
+  - host: www.example.org
     http:
       paths:
-      - path: /
+      - path: /blog(/|$)(.*)
         backend:
           serviceName: acme-blog
           servicePort: 80
