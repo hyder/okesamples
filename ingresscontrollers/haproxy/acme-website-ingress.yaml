@@ -4,7 +4,7 @@ metadata:
   name: acme-website
 spec:
   rules:
-  - host: www.example.org
+  - host: www.acme.com
     http:
       paths:
       - path: /

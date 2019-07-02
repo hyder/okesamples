@@ -1,17 +1,27 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: acme-blog
+  namespace: blog
+spec:
+  type: ExternalName
+  externalName: acme-blog.acme.svc.cluster.local
+  ports:
+  - port: 80
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: acme-blog-ingress
-  namespace: default
+  namespace: blog
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.frontend.rule.type: PathPrefixStrip 
 spec:
   rules:
-  - host: www.acme.com
+  - host: blog.acme.com
     http:
       paths:
-      - path: /blog
+      - path: /
         backend:
           serviceName: acme-blog
           servicePort: 80

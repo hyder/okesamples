@@ -4,7 +4,7 @@ metadata:
   name: acme-blog
 spec:
   rules:
-  - host: blog.example.org
+  - host: blog.acme.com
     http:
       paths:
       - path: /

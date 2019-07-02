@@ -3,10 +3,10 @@ kind: Ingress
 metadata:
   name: acme-blog-ingress
   annotations:
-    traefik.frontend.rule.type: PathPrefixStrip
+    kubernetes.io/ingress.class: contour
 spec:
   rules:
-  - host: www.example.org
+  - host: www.acme.com
     http:
       paths:
       - path: /blog

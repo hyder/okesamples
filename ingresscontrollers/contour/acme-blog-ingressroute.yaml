@@ -6,7 +6,7 @@ metadata:
     app: acme-blog
 spec:
   virtualhost:
-    fqdn: www.example.org
+    fqdn: www.acme.com
   routes:
     - match: /blog
       prefixRewrite: "/"

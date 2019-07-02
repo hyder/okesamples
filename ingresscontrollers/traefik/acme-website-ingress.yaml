@@ -2,9 +2,12 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: acme-website-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik  
 spec:
   rules:
-  - host: www.example.org
+  - host: www.acme.com
     http:
       paths:
       - path: /
