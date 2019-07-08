@@ -4,7 +4,7 @@ metadata:
   name: hello-ingress
 spec:
   rules:
-  - host: www.acme.com
+  - host: www.example.org
     http:
       paths:
       - backend:
