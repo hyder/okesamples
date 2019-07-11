@@ -1,21 +1,10 @@
-# kind: Service
-# apiVersion: v1
-# metadata:
-#   name: acme-blog
-#   namespace: blog
-# spec:
-#   type: ExternalName
-#   externalName: acme-blog.acme.svc.cluster.local
-#   ports:
-#   - port: 80
-# ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: acme-blog-ingress
   namespace: acme
   annotations:
-    kubernetes.io/ingress.class: traefik
+    kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
   - host: blog.acme.com
