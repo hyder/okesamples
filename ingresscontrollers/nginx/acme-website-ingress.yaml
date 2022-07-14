@@ -1,13 +1,17 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: acme-website
 spec:
+  ingressClassName: nginx
   rules:
-  - host: www.acme.com
+  - host: "www.acme.com"
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: acme-website
-          servicePort: 80
+          service:
+            name: acme-website
+            port:
+              number: 80
